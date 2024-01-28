@@ -5,8 +5,15 @@ https://swiperjs.com/demos
 <script setup>
 const colorMode = useColorMode()
 const cards = [
-  { front_src: "/crocodale_01.png", back_src: "/crocodale_02.png"},
-  { front_src: "/pasta_01.png", back_src: "/pasta_02.png"},
+  { front_src: "/crocodale_01.png", back_src: "/crocodale_02.png", title: "fake cry", info:"мдааа", badges: ["#color","#food","#animals"]},
+  { front_src: "/pasta_01.png", back_src: "/pasta_02.png", title: "everything seems to go wrong", info:"ням ням", badges: ["#color","#food"]},
+  { front_src: "/blue_01.png", back_src: "/blue_02.png", title: "to feel sad", info:"", badges: ["#color","#emotions"]},
+  { front_src: "/chess_01.png", back_src: "/chess_02 (3).png", title: "to be an influential person", info:"", badges: ["#food"]},
+  { front_src: "/cloud_01.png", back_src: "/cloud_02.png", title: "daydreaming", info:"", badges: ["#weather"]},
+  { front_src: "/promise_01.png", back_src: "/promise_02.png", title: "the most sacred", info:"", badges: ["#body"]},
+  { front_src: "/rainbow_01.png", back_src: "/rainbow_02.png", title: "", info:"", badges: ["#weather"]},
+  { front_src: "/fingers_01.png", back_src: "/fingers_02.png", title: "", info:"", badges: ["#body", "color"]},
+  { front_src: "/handly_01.png", back_src: "/handly_02.png", title: "", info:"", badges: ["#body"]},
 ]
 const isDark = computed({
   get () {
@@ -59,17 +66,13 @@ const isDark = computed({
           </swiper-slide>
         </swiper>
       </template>
-      <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+      <div class="font-bold text-xl mb-2">{{ card.title }}</div>
       <p class="text-gray-700 dark:text-gray-300">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
+        {{card.info}}
       </p>
       <template #footer>
         <div class="flex gap-2">
-          <UBadge>#color</UBadge>
-          <UBadge>#animals</UBadge>
-          <UBadge>#food</UBadge>
+          <UBadge v-for="badge in card.badges">{{ badge }}</UBadge>
         </div>
       </template>
     </UCard>
