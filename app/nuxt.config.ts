@@ -5,5 +5,5 @@ export default defineNuxtConfig({
       "@nuxt/image",
       'nuxt-swiper',
   ],
-  devtools: { enabled: true }
+  devtools: { enabled: false }
 })
