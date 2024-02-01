@@ -6,8 +6,8 @@ https://swiperjs.com/demos
 useSeoMeta({
   title: 'Идиомы на каждый день',
   ogTitle: 'Идиомы на каждый день',
-  description: 'Идиомы яяялялялялял',
-  ogDescription: 'Идиомы яяялялялялял',
+  description: 'Идиомы, пословицы и поговорки как средства обучения английскому языку',
+  ogDescription: 'Идиомы, пословицы и поговорки как средства обучения английскому языку',
   //ogImage: 'https://example.com/image.png',
   //twitterCard: 'summary_large_image',
 })
@@ -16,7 +16,7 @@ const page = ref(1)
 const cards = ref([
   { front_src: "/crocodale_01.png", back_src: "/crocodale_02.png", title: "crocodale tears", info:"В чём разница? " +
         "Tear vs Tear. Tear – слеза  /существительное/. Tear – рвать, рваться, разрывать, срывать, отрывать, драть  /глагол", badges: ["#color","#food","#animals"]},
-  { front_src: "/pasta_01.png", back_src: "/pasta_02.png", title: "bad hair day", info:"Русский аналог: встать не с той ноги", badges: ["#body","#food"]},
+  { front_src: "/pasta_01.png", back_src: "/pasta_02.png", title: "bad hair day", info:"<span class=\"text-primary-600\">Русский аналог:</span> встать не с той ноги", badges: ["#body","#food"]},
   { front_src: "/blue_01.png", back_src: "/blue_02.png", title: "feel blue", info:"В лирике: The Beatles - Baby's In Black. Oh dear, what can I do?\n" +
         "Baby's in black and I'm feeling blue. Она в чёрном, а я в печали. ", badges: ["#color","#emotions"]},
   { front_src: "/chess_01.png", back_src: "/chess_02 (3).png", title: "big cheese", info:"Русский аналог: большая шишка", badges: ["#food"]},
@@ -79,8 +79,7 @@ const isDark = computed({
         </swiper>
       </template>
       <div class="font-bold text-xl mb-2">{{ card.title }}</div>
-      <p class="text-gray-700 dark:text-gray-300">
-        {{card.info}}
+      <p class="text-gray-700 dark:text-gray-300" v-html="card.info">
       </p>
       <template #footer>
         <div class="flex gap-2">
