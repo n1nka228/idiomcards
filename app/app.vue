@@ -38,6 +38,9 @@ useSeoMeta({
   //twitterCard: 'summary_large_image',
 })
 useHead({
+  htmlAttrs: {
+    lang: 'ru'
+  },
   link: [
     {rel: 'manifest', href: '/site.webmanifest'},
     {rel: 'icon', type: 'image/png', sizes: '180x180', href: '/apple-touch-icon.png'},
