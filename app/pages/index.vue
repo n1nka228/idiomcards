@@ -60,17 +60,15 @@ useSeoMeta({
           class="mySwiper"
       >
         <swiper-slide>
-          <NuxtImg
-              class="w-full rounded"
+          <NuxtImg height="360px" densities="x1 x2" loading="lazy" class="w-full rounded"
               :src="card.front_src"
-              alt="Sunset in the mountains"
+              :alt="card.title"
           />
         </swiper-slide>
         <swiper-slide>
-          <NuxtImg
-              class="w-full rounded"
+          <NuxtImg height="360px" densities="x1 x2" loading="lazy" class="w-full rounded"
               :src="card.back_src"
-              alt="Sunset in the mountains"
+              :alt="card.title"
           />
         </swiper-slide>
       </swiper>

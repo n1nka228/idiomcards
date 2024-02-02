@@ -8,14 +8,14 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 const links = [{
   label: 'Идиомы',
   to: '/',
-  current: false
+  current: true
 }, {
   label: 'Темы',
   to: '/getting-started/installation',
   current: false
 }, {
   label: 'Практика',
-  to: '/getting-started/theming',
+  to: '/practic',
   current: false
 }, {
   label: 'О нас',
@@ -74,7 +74,7 @@ useSeoMeta({
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <img class="h-12 w-auto" src="/idiC_logo_head.png" alt="Идиомы на каждый день" />
+              <NuxtLink to="/"><NuxtImg width="140px" densities="x1 x2" class="h-12 w-auto" src="/idiC_logo_head.png" alt="Идиомы на каждый день" /></NuxtLink>
             </div>
             <div class="hidden pt-2 sm:ml-6 sm:block">
               <div class="flex space-x-4">
@@ -108,4 +108,9 @@ useSeoMeta({
   <UContainer>
     <NuxtPage />
   </UContainer>
+  <footer>
+    <div class="pt-8 pb-2">
+      <p class="text-center text-gray-500">© 2024 ninak.lebedeva@gmail.com, Все права защищены.</p>
+    </div>
+  </footer>
 </template>
