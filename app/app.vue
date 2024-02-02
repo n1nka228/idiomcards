@@ -138,7 +138,8 @@ useSeoMeta({
     </Disclosure>
   </header>
   <UContainer>
-    <UCard v-for="card in cards.slice((page - 1) * 5, page * 5)">
+    <div class="sm:grid sm:grid-cols-3">
+      <UCard v-for="card in cards.slice((page - 1) * 6, page * 6)">
       <template #header>
         <swiper
             :effect="'flip'"
@@ -176,6 +177,7 @@ useSeoMeta({
         </div>
       </template>
     </UCard>
+    </div>
     <UPagination v-model="page" :page-count="5" :total="cards.length" />
   </UContainer>
 </template>
