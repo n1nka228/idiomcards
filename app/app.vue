@@ -9,11 +9,7 @@ const links = [{
   label: 'Идиомы',
   to: '/',
   current: true
-}, {
-  label: 'Темы',
-  to: '/getting-started/installation',
-  current: false
-}, {
+},{
   label: 'Практика',
   to: '/practic',
   current: false
@@ -49,7 +45,7 @@ useSeoMeta({
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <div class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span class="absolute -inset-0.5" />
               <ClientOnly>
                 <UButton
@@ -63,7 +59,7 @@ useSeoMeta({
                   <div class="w-8 h-8" />
                 </template>
               </ClientOnly>
-            </DisclosureButton>
+            </div>
             <!-- Mobile menu button-->
             <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span class="absolute -inset-0.5" />
@@ -99,8 +95,8 @@ useSeoMeta({
         </div>
       </div>
       <DisclosurePanel class="sm:hidden">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-          <DisclosureButton v-for="item in links" :key="item.label" as="a" :href="item.to" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.label }}</DisclosureButton>
+        <div class="space-y-1 px-2 pb-3 pt-0 text-right">
+          <DisclosureButton v-for="item in links" :key="item.label" as="a" :href="item.to" :class="[isDark ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-700 hover:text-gray-900', 'block rounded-md px-3 pb-1 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.label }}</DisclosureButton>
         </div>
       </DisclosurePanel>
     </Disclosure>
