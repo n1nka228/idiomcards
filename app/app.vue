@@ -6,15 +6,15 @@ https://swiperjs.com/demos
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 const links = [{
-  label: 'Главная',
+  label: 'Идиомы',
   to: '/',
   current: false
 }, {
-  label: 'Информация',
+  label: 'Темы',
   to: '/getting-started/installation',
   current: false
 }, {
-  label: 'Разделы',
+  label: 'Практика',
   to: '/getting-started/theming',
   current: false
 }, {
@@ -22,6 +22,7 @@ const links = [{
   to: '/getting-started/shortcuts',
   current: false
 }]
+
 const colorMode = useColorMode()
 const page = ref(1)
 const cards = ref([
@@ -69,7 +70,7 @@ useSeoMeta({
   ogTitle: 'Идиомы на каждый день',
   description: 'Идиомы, пословицы и поговорки как средства обучения английскому языку',
   ogDescription: 'Идиомы, пословицы и поговорки как средства обучения английскому языку',
-  ogImage: 'https://idiomcards.ru/_nuxt/idiC_logo_app.png',
+  ogImage: 'https://idiomcards.ru/idiC_logo_app.png',
   //twitterCard: 'summary_large_image',
 })
 </script>
@@ -105,25 +106,27 @@ useSeoMeta({
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <img class="h-8 w-auto" src="/idiC_logo_head.png" alt="Идиомы на каждый день" />
+              <img class="h-12 w-auto" src="/idiC_logo_head.png" alt="Идиомы на каждый день" />
             </div>
-            <div class="hidden sm:ml-6 sm:block">
+            <div class="hidden pt-2 sm:ml-6 sm:block">
               <div class="flex space-x-4">
                 <a v-for="item in links" :key="item.label" :href="item.to" :class="[isDark ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-gray-600 hover:text-gray-900', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.label }}</a>
-                <ClientOnly>
-                  <UButton
-                      :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
-                      color="gray"
-                      variant="ghost"
-                      aria-label="Theme"
-                      @click="isDark = !isDark"
-                  />
-                  <template #fallback>
-                    <div class="w-8 h-8" />
-                  </template>
-                </ClientOnly>
               </div>
             </div>
+          </div>
+          <div class="flex pt-2 flex-shrink-0 space-x-4 right-0 hidden sm:block">
+            <ClientOnly>
+              <UButton
+                  :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
+                  color="gray"
+                  variant="ghost"
+                  aria-label="Theme"
+                  @click="isDark = !isDark"
+              />
+              <template #fallback>
+                <div class="w-8 h-8" />
+              </template>
+            </ClientOnly>
           </div>
         </div>
       </div>
