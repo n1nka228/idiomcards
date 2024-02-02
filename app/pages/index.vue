@@ -49,7 +49,6 @@ useSeoMeta({
 <template>
   <div class="sm:grid sm:grid-cols-3">
     <UCard v-for="card in cards.slice((page - 1) * 6, page * 6)">
-    <template #header>
       <swiper
           :effect="'flip'"
           :loop="true"
@@ -72,14 +71,13 @@ useSeoMeta({
           />
         </swiper-slide>
       </swiper>
-    </template>
-    <div class="font-bold text-xl mb-2">{{ card.title }}</div>
-    <p class="text-gray-700 dark:text-gray-300">
-      <span class="text-pink-400">{{ card.info_title }}</span>
-      {{ card.info_text }}
-    </p>
     <template #footer>
-      <div class="flex gap-2">
+      <div class="font-bold text-xl mb-2">{{ card.title }}</div>
+      <p class="text-gray-700 dark:text-gray-300">
+        <span class="text-pink-400">{{ card.info_title }}</span>
+        {{ card.info_text }}
+      </p>
+      <div class="pt-2 flex gap-2">
         <UBadge v-for="badge in card.badges">{{ badge }}</UBadge>
       </div>
     </template>
