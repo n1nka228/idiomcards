@@ -16,6 +16,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.1.1",
     "@nuxt/ui": "^2.12.3",
     "nuxt-swiper": "^1.2.2",
     "sharp": "^0.33.2"

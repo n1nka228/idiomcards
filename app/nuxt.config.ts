@@ -5,5 +5,8 @@ export default defineNuxtConfig({
       "@nuxt/image",
       'nuxt-swiper',
   ],
+  image: {
+    domains: ['idiomcards.ru']
+  },
   devtools: { enabled: false }
 })
