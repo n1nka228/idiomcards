@@ -117,7 +117,7 @@ useHead({
   </UContainer>
   <footer>
     <div class="pt-8 pb-2">
-      <p class="text-center text-gray-500">© 2024 ninak.lebedeva@gmail.com, Все права защищены.</p>
+      <p class="text-center font-mono text-gray-500 text-sm sm:text-base">© 2024 ninak.lebedeva@gmail.com, Все права защищены.</p>
     </div>
   </footer>
 </template>
