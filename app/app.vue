@@ -14,7 +14,7 @@ const links = [{
   to: '/practic',
   current: false
 }, {
-  label: 'О нас',
+  label: 'О проекте',
   to: '/about',
   current: false
 }]
@@ -37,6 +37,14 @@ useSeoMeta({
   ogImage: 'https://idiomcards.ru/idiC_logo_app.png',
   //twitterCard: 'summary_large_image',
 })
+useHead({
+  link: [
+    {rel: 'manifest', href: '/site.webmanifest'},
+    {rel: 'icon', type: 'image/png', sizes: '180x180', href: '/apple-touch-icon.png'},
+    {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+    {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+  ],
+});
 </script>
 
 <template>
